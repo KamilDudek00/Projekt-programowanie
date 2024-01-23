@@ -1,0 +1,26 @@
+\chapter{Wymagania projektu}
+\section{Wymagania funkcjonalne}
+Wymagania funkcjonalne definiują zbiór działań i funkcji, które system powinien realizować, aby spełnić określone cele biznesowe. W przypadku projektu konsolowego sklepu w języku C\#, wymagania funkcjonalne obejmują szereg operacji związanych zarówno z zarządzaniem produktami, jak i obsługą zamówień.
+
+\subsection{Zarządzanie produktami}
+System umożliwia dodawanie nowych produktów do bazy danych poprzez interfejs konsolowy. Podczas dodawania produktu należy podać jego nazwę, cenę, ilość na stanie oraz inne istotne informacje. Sprzedawca ma możliwość edycji istniejących produktów, w tym zmiany nazwy, ceny, ilości na stanie itp. Zmiany dokonane na produkcie powinny być odzwierciedlone w bazie danych sklepu. System umożliwia usunięcie produktów z bazy danych. Usunięcie produktu powinno być potwierdzone przez użytkownika, aby zapobiec przypadkowemu usunięciu istotnych danych.
+
+\subsection{Zarządzanie zamówieniami}
+Klienci mogą przeglądać dostępne produkty i dodać je do koszyka zakupowego. System umożliwia składanie zamówień poprzez interaktywny interfejs konsolowy, gdzie klient może zobaczyć sumaryczną kwotę zamówienia. Użytkownicy mogą edytować zawartość swojego koszyka, zmieniając ilość produktów lub usuwając je.
+W przypadku zmian w zamówieniu, system powinien na bieżąco aktualizować wartość zamówienia. Klient może zatwierdzić i złożyć zamówienie, co powinno spowodować zapisanie zamówienia w bazie danych.
+
+\subsection{Autoryzacja i uwierzytelnianie}
+System umożliwia klientom logowanie do swojego konta lub rejestrację nowego konta w celu dokonywania zakupów. Użytkownicy mogą mieć różne poziomy dostępu w systemie, np. klient, sprzedawca, co wpływa na dostępne funkcje. Wyboru rodzaju konta należy dokonać przy włączeniu aplikacji.
+
+\newpage
+\section{Wymagania niefunkcjonalne}
+Wymagania niefunkcjonalne definiują cechy systemu, które nie są związane bezpośrednio z jego funkcjonalnością, ale mają istotne znaczenie dla jego jakości, wydajności, bezpieczeństwa czy użyteczności. Poniżej przedstawione są główne wymagania niefunkcjonalne dla projektu konsolowego sklepu.
+
+\subsection{Wydajność}
+System powinien reagować na interakcje użytkownika w sposób szybki i płynny, zapewniając czas odpowiedzi poniżej 1 sekundy dla podstawowych operacji. Aplikacja powinna efektywnie zarządzać zasobami, takimi jak pamięć i procesor, minimalizując zużycie zasobów systemowych.
+
+\subsection{Bezpieczeństwo}
+System powinien zapewnić mechanizmy autoryzacji i uwierzytelniania użytkowników, aby zapobiec nieautoryzowanemu dostępowi do danych. W zależności od roli w systemie użytkownik będzie miał dostęp tylko do swoich funkcjonalności. Dane użytkowników (takie jak dane osobowe i hasło) powinny być przechowywane w sposób bezpieczny, zapewniający poufność i integralność.
+
+\subsection{Użyteczność}
+Interfejs konsolowy powinien być przejrzysty i intuicyjny, umożliwiając użytkownikom łatwe korzystanie z funkcji sklepu. Komunikaty o błędach powinny być czytelne i informatywne, aby użytkownicy mogli łatwo zrozumieć przyczyny problemów i podjąć odpowiednie działania naprawcze.

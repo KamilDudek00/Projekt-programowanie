@@ -1,0 +1,51 @@
+\documentclass[polish,12pt,twoside,a4paper]{report}
+
+\input{style.tex}
+
+\newcommand{\wydzial}{KOLEGIUM INFORMATYKI STOSOWANEJ}
+\newcommand{\kierunek}{Kierunek: INFORMATYKA}
+\newcommand{\specjalnosc}{Specjalność: Teleinformatyka}
+\newcommand{\autor}{Kamil Dudek}
+\newcommand{\album}{Nr albumu studenta w68560}
+\newcommand{\temat}{Program "Sklep"}
+\newcommand{\promotor}{dr inż. Janusz Korniak}
+\newcommand{\typpracy}{PRACA DYPLOMOWA INŻYNIERSKA}
+\newcommand{\miasto}{Rzeszów}
+\newcommand{\rok}{2024}
+
+\begin{document}
+
+\input{front.tex}
+
+\input{wstep.tex}
+\addcontentsline{toc}{chapter}{Opis założeń projektu}
+\newpage
+\input{R1.tex}
+\newpage
+\input{R2.tex}
+\newpage
+\input{R3.tex}
+\newpage
+\input{R4.tex}
+\newpage
+\input{R6.tex}
+\newpage
+\input{R7.tex}
+\newpage
+
+\begin{thebibliography}{6}
+\addcontentsline{toc}{chapter}{Bibliografia}
+%dodanie wpisu do spisu bibliograficznego
+
+
+\bibitem{www} https://stackoverflow.com/ z dnia 29.12.2023
+\bibitem{www} https://pasja-informatyki.pl/ z dnia 03.01.2024
+
+\bibitem{ksiazka}Joseph Albahari, Ben Albahari, {\it C\# 9.0 in a Nutshell: The Definitive Reference},  O'Reilly Media, Sebastopol, Kalifornia, USA, 2021.
+\bibitem{ksiazka}Bartłomiej Filipek, {\it Programowanie w C\#. Teoria i praktyka}, Helion, Gliwice 2019.
+\bibitem{ksiazka}Andrzej Ślęzak, Wojciech Ślęzak, {\it C\# Od Podstaw. Wydanie V}, Helion, Gliwice 2018.
+\end{thebibliography}
+\newpage
+
+
+\end{document}
