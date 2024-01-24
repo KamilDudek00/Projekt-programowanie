@@ -1,0 +1,20 @@
+﻿\chapter{Opis techniczny projektu}
+\section{Wykorzystana technologia}
+
+Projekt sklepu to aplikacja konsolowa napisana w języku C\#. Jej głównym założeniem jest podział funkcjonalności, na te które są w uprawnieniach sprzedawcy, a także, 
+te do których dostęp ma klient. Obsługa menu programu polega na przechodzeniu pomiędzy opcjami przy pomocy strzałek co ułatwia korzystanie z interface'u.\newline
+
+W celu uatrakcyjnienia wyglądu, użyto kolorowania składni oraz obrazków reprezentujących produkty sklepu odzieżowego przy pomocy ASCII art. Mechanizm koszyka, do którego klient
+może dodawac wybrane produkty, aby później móc je kupić zaimplementowano korzystając z klasy statycznej. Przy pomocy polecenia \textit{Console.SetCursorPosition(y, x)} zmieniane są miejsca
+kursora na konsoli, dzięki czemu pisanie tekstu można było zaczynać z dowolnego miejsca.\newline
+
+Głównym elementem programu, który został wykorzystany wielokrotnie przy każdorazowym przejściu do kolejnego menu była pętla while. We wspomnianej pętli wyświetlane zostały menu, tak długo, aż spełniony został warunek przerwania, który zachodził, gdy zaznaczona, a następnie zatwierdzona została opcja \textit{Wyjście}.\newline
+
+Aby zapewnić w aplikacji korzystanie z tych samych danych, które znajdowały się podczas ostatniego użytkownia przed jej zamknięciem, zastosowano bazę danych SQL. Jest to relacyjna baza danych, która przechowuje informacje w relacji między tabelami. W tym celu zainstalowano bibliotekę EntityFrameworkCore, w wersji 6, która kompatybilna jest z również 6 wersją .NET, który wykorzystany został do stworzenia danej aplikacji.\newline
+
+Sprzedawca ma możliwość generowania raportu PDF z asortymentu dostępnego w sklepie. Funkcjonalność tą zaimplementowano przy pomocy biblioteki iText7, która specjalizuje się w tworzeniu plików pdf. Do projektu dołączono ją poprzez NuGet.
+
+\section{Baza danych}
+W programie klasą odpowiedzialną za konfigurację połączenia bazy danych z aplikacją jest klasa \textit{ApplicationDbContext}. Dziedziczy ona po klasie DbContext, dzięki czemu można nadpisać metodę OnConfiguring. W jej ciele, znajduje się konfiguracja połączenia z lokalną bazą danych podaną w adresie \textit{ConnectionString}. Użyto w niej metodę \textit{UseLazyLoadingProxies}. Dzięki temu, kiedy nastąpi próba dostępu do powiązanych encji, będą one leniwie ładowane, nawet w kontekście asynchronicznym. Co za tym idzie, w modelach, które opisują budowę poszczególnych tabel zastosowano słówko \textit{virtual}, aby zaciągać dane obiektów będąnych w relacji.\newline
+
+Logika działania programu zawarta jest w klauzuli \textit{using}, w której tworzony jest kontekst bazy danych, co umożliwia do nich dostęp. W jej obrębie stworzono obiekty, które reprezentują repozytoria. Każde repozytorium pełni funkcję dostępu do poszczególnych typów danych zawartych w tabelach bazy danych. Oddzielają one kod logiki realizujący operację od dostępu do informacji.
